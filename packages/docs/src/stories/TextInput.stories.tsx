@@ -4,7 +4,17 @@ import { Box, Text, TextInput, TextInputProps } from '@ignite-uii/react'
 export default {
   title: 'Form/Text Input',
   component: TextInput,
-  args: {},
+  args: {
+    size: 'md',
+    disabled: false,
+  },
+  argTypes: {
+    size: {
+      options: ['sm', 'md'],
+      control: { type: 'inline-radio' },
+    },
+    disabled: { control: 'boolean' },
+  },
   tags: ['autodocs'],
   decorators: [
     (Story) => {
@@ -36,5 +46,6 @@ export const Disabled: StoryObj<TextInputProps> = {
 export const WithPrefix: StoryObj<TextInputProps> = {
   args: {
     prefix: 'cal.com/',
+    placeholder: 'your-username',
   },
 }
